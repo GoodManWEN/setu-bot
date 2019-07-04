@@ -16,3 +16,27 @@ bash coolq.bot.install
 登录过后，右键点击图标 -> 应用 -> 应用管理 -> 重载应用 -> HTTP API -> 开启 <br>
 <br>
 编写环境 ： ubuntu 16.04 LTS
+
+## 组件逻辑
+```
++--------------+    ws   +------------+   ws  +-----------+
+| Python Logic | <------ | coolq-wine | <---- | picfinder | 
++--------------+         +------------+       +-----------+
+                            api | event
+                                |
+                         +--------------+
+                         | coolq-server |
+                         +--------------+    
+                                |  request
+                                |
++--------------+         +--------------+
+| QQ user pc / | message | QQ user pc / |
+| phone client | <======>| phone client |
++--------------+         +--------------+
+```
+
+## 使用项目
+- [docker-wine-coolq](https://github.com/CoolQ/docker-wine-coolq)
+- [coolq-http-api](https://github.com/richardchien/coolq-http-api)
+- [python-aiocqhttp](https://github.com/richardchien/python-aiocqhttp)
+- [CQ-picfinder-robot](https://github.com/Tsuk1ko/CQ-picfinder-robot)
