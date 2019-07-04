@@ -20,18 +20,23 @@ bash coolq.bot.install
 ## 组件逻辑
 ```
 +--------------+    ws   +------------+   ws  +-----------+
-| Python Logic | <------ | coolq-wine | <---- | picfinder | 
+| Python Logic | <====== | coolq-http | <==== | picfinder | 
 +--------------+         +------------+       +-----------+
-                            api | event
-                                |
+                            api || event
+                                ||
+                         +------------+ 
+                         | coolq-wine | 
+                         +------------+
+                                || 
+                                ||
                          +--------------+
                          | coolq-server |
                          +--------------+    
-                                |  request
-                                |
+                                ||  request
+                                ||
 +--------------+         +--------------+
-| QQ user pc / | message | QQ user pc / |
-| phone client | <======>| phone client |
+| QQ user pc / | message |   server of  |
+| phone client | <======>|   Tencent    |
 +--------------+         +--------------+
 ```
 
