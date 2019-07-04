@@ -1,0 +1,10 @@
+{
+    "general": {
+        "use_ws": true,
+        "ws_host": "172.18.0.2",
+        "ws_port": 6700,
+        "use_ws_reverse": true,
+        "ws_reverse_event_url":"ws://172.18.0.3:8700/ws/event/",
+        "ws_reverse_api_url":"ws://172.18.0.3:8700/ws/api/"
+    }
+}
