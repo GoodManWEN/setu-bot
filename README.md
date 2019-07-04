@@ -9,4 +9,10 @@ git clone https://github.com/GoodManWEN/setu-bot.git
 cd setu-bot
 bash coolq.bot.install
 ```
+↑以上服务器设置完成 <br>
+接下来打开coolq图形界面登录 <br>
+访问网址 你的服务器IP:8080 按照提示操作 <br>
+\# <br>
+登录过后，右键点击图标 -> 应用 -> 应用管理 -> 重载应用 -> HTTP API -> 开启 <br>
+<br>
 编写环境 ： ubuntu 16.04 LTS
