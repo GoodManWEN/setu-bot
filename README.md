@@ -19,6 +19,11 @@ bash coolq.bot.install
 
 ## 组件逻辑
 ```
++--------------+ 
+|    Redis     |
++--------------+
+       |
+       |
 +--------------+    ws   +------------+   ws  +-----------+
 | Python Logic | <====== | coolq-http | <==== | picfinder | 
 +--------------+         +------------+       +-----------+
@@ -39,6 +44,16 @@ bash coolq.bot.install
 | phone client | <======>|   Tencent    |
 +--------------+         +--------------+
 ```
+
+## 数据库相关
+本项目图片资料以非关系型数据库redis管理，并将一定量图片缓存在本地<br>
+仓库本身不数据，意思是如果只是执行bash脚本，即使完全安装上述所有组件，**机器人仍然是无法运行的。**<br>
+想让它跑起来，你需要填充自己的图片资料。
+
+现假设加入100张图，Redis内部数据结构如下：（默认db0）
+  1. 总体数据结构分为两部分：一系列string，以及一个hash.
+  2. 对于每张图，都有一个string键值对储存其地址，形式为 "pid":"地址" , 例如 "4000000":"https://i.pximg.net/img-master/img/2009/04/25/19/36/39/4000000_p0_master1200.jpg" ，使用string是为了方便randomkey()采样。
+  3. 对于每张图，在特殊hash（key名"informations"）中都有一个键值对，储存其作者ID与标题（可以为空），为存储开发方便用特殊符号''$^$~'分隔 ,例如"informations":{"4000000":"ThisIsTitle$^$~I'mAuthor'"}
 
 ## 使用项目
 - [docker-wine-coolq](https://github.com/CoolQ/docker-wine-coolq)
