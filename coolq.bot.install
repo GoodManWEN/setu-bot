@@ -37,7 +37,7 @@ cd /root
 mkdir coolq-data
 docker pull coolq/wine-coolq
 
-docker run --name=coolq -d --restart=always -p 8080:9000 -v /root/coolq-data:/home/user/coolq -e VNC_PASSWD=yourpassword -e COOLQ_ACCOUNT=78888888 -e COOLQ_URL http://dlsec.cqp.me/cqp-tuling --network web coolq/wine-coolq
+docker run --name=coolq -d --restart=always -p 8080:9000 -v /root/coolq-data:/home/user/coolq -e VNC_PASSWD=yourpassword -e COOLQ_ACCOUNT=78888888 -e COOLQ_URL=http://dlsec.cqp.me/cqp-tuling --network web coolq/wine-coolq
 
 # coolq http plug-in
 cd /root/coolq-data/app
