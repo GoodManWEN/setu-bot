@@ -6,6 +6,7 @@ RUN apt-get update \
  && apt-get install -y git \
  && git clone https://github.com/Tsuk1ko/CQ-picfinder-robot.git \
  && cd CQ-picfinder-robot \
+ && git checkout a413aa3d94 \
  && cat config.default.json | sed 's/127.0.0.1/172.18.0.2/g;44d;43a "default": "",' > config.json \
  && npm i
 
