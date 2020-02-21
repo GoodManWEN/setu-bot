@@ -70,7 +70,7 @@ cd CQ-picfinder-robot
 cp $PWD/picfinder.config.json ./config.json
 cp $PWD/node.Dockerfile ./Dockerfile
 docker build -t node:bot .
-docker run -d --name=jsbot --restart=always --network=web -v /root/coolq-data/aside/CQ-picfinder-robot/config.json:/root/coolq-data/aside/CQ-picfinder-robot/config.json node:bot npm start
+docker run -d --name=jsbot --restart=always --network=web -v /root/coolq-data/aside/CQ-picfinder-robot/config.json:/root/CQ-picfinder-robot/config.json node:bot npm start
 
 # monitor
 cd  /root/coolq-data/aside
