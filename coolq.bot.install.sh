@@ -41,7 +41,7 @@ docker run --name=coolq -d --restart=always -p 8080:9000 -p 5700:5700  --network
 
 # coolq http plug-in
 cd /root/coolq-data/app
-wget https://github.com/richardchien/coolq-http-api/releases/download/v4.10.1/io.github.richardchien.coolqhttpapi.cpk
+wget https://github.com/richardchien/coolq-http-api/releases/download/v4.10.0/io.github.richardchien.coolqhttpapi.cpk
 cd /root/coolq-data/data/app
 mkdir io.github.richardchien.coolqhttpapi
 cd io.github.richardchien.coolqhttpapi
